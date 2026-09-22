@@ -419,6 +419,7 @@ function AdminPanel() {
                           {errors.startCode[index].initialCode.message}
                         </span>
                       )}
+                      
                     </div>
 
                     <div className="form-control">
