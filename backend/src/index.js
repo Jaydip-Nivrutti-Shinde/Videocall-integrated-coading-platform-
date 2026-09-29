@@ -6,7 +6,13 @@ const cookieParser = require('cookie-parser');
 const authRouter = require('./routes/userAuth');
 const redisClient = require('./config/redis');
 const problemRouter = require('./routes/problemCreator.js')
-const submitRouter = require('./routes/submit.js')
+const submitRouter = require('./routes/submit.js');
+const cors = require('cors');
+
+app.use(cors({
+    origin: 'http://localhost:5173', //here if wrote * then anyone can access it if mentioned link then for that only
+    credentials: true 
+}));
 
 app.use(express.json());
 app.use(cookieParser());
