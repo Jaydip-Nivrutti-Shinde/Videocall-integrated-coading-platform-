@@ -19,7 +19,7 @@ app.use(cookieParser());
 // app.use(express.urlencoded({ extended: true }));
 
 app.use('/user', authRouter);
-app.use('/problems', problemRouter);
+app.use('/problem', problemRouter);
 app.use('/submission', submitRouter);
 
 
