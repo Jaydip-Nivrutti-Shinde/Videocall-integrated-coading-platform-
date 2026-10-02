@@ -1,4 +1,5 @@
 const Problem = require("../models/problem");
+const User = require("../models/user");
 
 const {
     getLanguageById,
@@ -431,24 +432,24 @@ const getAllProblem = async(req,res)=>{
   }
 }
 
-const solvedAllProblembyUser =  async(req,res)=>{
-   
-    try{
-       
-      const userId = req.result._id;
+    const solvedAllProblembyUser =  async(req,res)=>{
+    
+        try{
+        
+        const userId = req.user._id;
 
-      const user =  await User.findById(userId).populate({
-        path:"problemSolved",
-        select:"_id title difficulty tags"
-      });
-      
-      res.status(200).send(user.problemSolved);
+        const user =  await User.findById(userId).populate({
+            path:"problemSolved",
+            select:"_id title difficulty tags"
+        });
+        
+        res.status(200).send(user.problemSolved);
 
+        }
+        catch(err){
+        res.status(500).send("Server Error");
+        }
     }
-    catch(err){
-      res.status(500).send("Server Error");
-    }
-}
 
 const submittedProblem = async(req,res)=>{
 

@@ -11,7 +11,7 @@ const validate = (data)=>{
     if(!IsAllowed)
         throw new Error("Some Field Missing");
 
-    if(!validator.isEmail(data.emailId))
+    if(!validator.isEmail(data.email))
         throw new Error("Invalid Email");
 
     if(!validator.isStrongPassword(data.password))

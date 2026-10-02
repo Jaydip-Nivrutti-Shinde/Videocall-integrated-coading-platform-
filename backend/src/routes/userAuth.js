@@ -13,7 +13,7 @@ authRouter.get('/check',userMiddleware,(req,res)=>{
 
     const reply = {
         firstName: req.user.firstName,
-        emailId: req.user.emailId,
+        email: req.user.email,
         _id:req.user._id,
         role:req.user.role,
     }

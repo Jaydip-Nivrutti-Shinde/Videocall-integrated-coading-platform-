@@ -8,9 +8,9 @@ import ChatAi from '../components/ChatAi';
 import Editorial from '../components/Editorial';
 
 const langMap = {
-        cpp: 'C++',
-        java: 'Java',
-        javascript: 'JavaScript'
+        cpp: 'c++',
+        java: 'java',
+        javascript: 'javaScript'
 };
 
 
@@ -30,37 +30,51 @@ const ProblemPage = () => {
 
   const { handleSubmit } = useForm();
 
- useEffect(() => {
-    const fetchProblem = async () => {
-      setLoading(true);
-      try {
-        
-        const response = await axiosClient.get(`/problem/problemById/${problemId}`);
-       
-        
-        const initialCode = response.data.startCode.find(sc => sc.language === langMap[selectedLanguage]).initialCode;
+// First useEffect — Problem fetch
+useEffect(() => {
+  const fetchProblem = async () => {
+    setLoading(true);
+    try {
+      const response = await axiosClient.get(`/problem/problemById/${problemId}`);
 
-        setProblem(response.data);
-        
-        setCode(initialCode);
-        setLoading(false);
-        
-      } catch (error) {
-        console.error('Error fetching problem:', error);
-        setLoading(false);
-      }
-    };
+      // 🔍 Debug (चाहो तो हटा दो)
+      console.log("startCode from DB:", JSON.stringify(response.data.startCode, null, 2));
+      console.log("Looking for language:", langMap[selectedLanguage]);
 
-    fetchProblem();
-  }, [problemId]);
+      // ✅ पहले problem set करो (description दिखाने के लिए)
+      setProblem(response.data);
 
-  // Update code when language changes
-  useEffect(() => {
-    if (problem) {
-      const initialCode = problem.startCode.find(sc => sc.language === langMap[selectedLanguage]).initialCode;
-      setCode(initialCode);
+      // ✅ फिर safe तरीके से starter code निकालो
+      const wanted = langMap[selectedLanguage]?.toLowerCase();
+      const starter = response.data.startCode?.find(
+        sc => sc.language?.toLowerCase() === wanted
+      );
+      setCode(starter?.initialCode ?? '// Write your code here');
+
+      setLoading(false);
+
+    } catch (error) {
+      console.error('Error fetching problem:', error);
+      setLoading(false);
     }
-  }, [selectedLanguage, problem]);
+  };
+
+  fetchProblem();
+}, [problemId]);
+
+
+// Second useEffect — Language change पर code update
+useEffect(() => {
+  if (!problem) return;
+
+  const wanted = langMap[selectedLanguage]?.toLowerCase();
+  const starter = problem.startCode?.find(
+    sc => sc.language?.toLowerCase() === wanted
+  );
+  setCode(starter?.initialCode ?? '// Write your code here');
+
+}, [selectedLanguage, problem]);
+
 
   const handleEditorChange = (value) => {
     setCode(value || '');
