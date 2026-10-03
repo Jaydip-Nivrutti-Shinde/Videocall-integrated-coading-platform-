@@ -8,6 +8,7 @@ const redisClient = require('./config/redis');
 const problemRouter = require('./routes/problemCreator.js')
 const submitRouter = require('./routes/submit.js');
 const cors = require('cors');
+const aiRouter = require('./routes/aiChatting.js');
 
 app.use(cors({
     origin: 'http://localhost:5173', //here if wrote * then anyone can access it if mentioned link then for that only
@@ -21,7 +22,7 @@ app.use(cookieParser());
 app.use('/user', authRouter);
 app.use('/problem', problemRouter);
 app.use('/submission', submitRouter);
-
+app.use('/ai',aiRouter);
 
 const InitalizeConnection = async ()=>{
     try{

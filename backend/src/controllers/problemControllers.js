@@ -1,5 +1,6 @@
 const Problem = require("../models/problem");
 const User = require("../models/user");
+const Submission = require("../models/submissions");
 
 const {
     getLanguageById,
@@ -432,7 +433,7 @@ const getAllProblem = async(req,res)=>{
   }
 }
 
-    const solvedAllProblembyUser =  async(req,res)=>{
+const solvedAllProblembyUser =  async(req,res)=>{
     
         try{
         
@@ -454,12 +455,14 @@ const getAllProblem = async(req,res)=>{
 const submittedProblem = async(req,res)=>{
 
   try{
+   
      
-    const userId = req.result._id;
+    const userId = req.user._id;
+    
     const problemId = req.params.pid;
-
    const ans = await Submission.find({userId,problemId});
-  
+
+
   if(ans.length==0)
     res.status(200).send("No Submission is persent");
 

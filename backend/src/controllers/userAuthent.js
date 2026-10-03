@@ -42,7 +42,7 @@ const register = async (req, res) => {
 
         return res.status(201).json({
             message: "User created successfully",
-            user: { _id: user._id, firstName: user.firstName, email: user.email }
+            user: { _id: user._id, firstName: user.firstName, email: user.email,  role: user.role }
         });
 
     } catch (err) {
@@ -97,7 +97,8 @@ const login = async (req, res) => {
             user: {
                 _id: user._id,
                 firstName: user.firstName,
-                email: user.email
+                email: user.email,
+                role: user.role 
             }
         });
 
@@ -189,7 +190,7 @@ const adminRegister =async (req, res)=>{
 
         return res.status(201).json({
             message: "User created successfully",
-            user: { _id: user._id, firstName: user.firstName, email: user.email }
+            user: { _id: user._id, firstName: user.firstName, email: user.email, role: user.role  }
         });
 
     } catch (err) {
