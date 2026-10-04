@@ -42,9 +42,9 @@ const submitBatch = async (submissions) => {
 
     } catch (error) {
 
-        console.log("Judge0 Submit Error:");
-        console.log("Status:", error.response?.status);
-        console.log("Data:", error.response?.data);
+        // console.log("Judge0 Submit Error:");
+//         console.log("Status:", error.response?.status);
+        // console.log("Data:", error.response?.data);
 
         throw error;
     }
@@ -104,9 +104,9 @@ const submitToken = async (resultToken) => {
 
         } catch (error) {
 
-            console.log("Judge0 Result Error:");
-            console.log("Status:", error.response?.status);
-            console.log("Data:", error.response?.data);
+            // console.log("Judge0 Result Error:");
+            // console.log("Status:", error.response?.status);
+            // console.log("Data:", error.response?.data);
 
             throw error;
         }

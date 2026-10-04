@@ -138,8 +138,8 @@ const createProblem = async (req, res) => {
         }
 
 
-        console.log("Judge0 submissions:");
-        console.log(submissions);
+        // console.log("Judge0 submissions:");
+//         console.log(submissions);
 
 
         // -----------------------------
@@ -185,8 +185,8 @@ const createProblem = async (req, res) => {
         const results = await submitToken(tokens);
 
 
-        console.log("Judge0 results:");
-        console.log(results);
+        // console.log("Judge0 results:");
+        // console.log(results);
 
 
         // -----------------------------
@@ -325,7 +325,7 @@ const updateProblem = async (req,res)=>{
 
 
       const submitResult = await submitBatch(submissions);
-      // console.log(submitResult);
+    //   console.log(submitResult);
 
       const resultToken = submitResult.map((value)=> value.token);
 

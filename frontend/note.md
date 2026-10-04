@@ -8,5 +8,6 @@ cloud name -
 
 work flow of video - frontend se request to uplode data -> backend sedn responcce as api key(public key), cloud name, digital signature using private key i.e. api secrete it has encoded informations like timestamp, folder etc... - this all information sended to clodanary and cloudanary verifies that signature
 
+uses stream approach here - transporting or procesing means video converted to various forms
 
 
