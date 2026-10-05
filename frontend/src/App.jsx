@@ -35,9 +35,6 @@ function App() {
       <Route path="/problem/:problemId" element={<ProblemPage/>}></Route>
       <Route path="/admin/video" element={isAuthenticated && user?.role === 'admin' ? <AdminVideo /> : <Navigate to="/" />} />
       <Route path="/admin/upload/:problemId" element={isAuthenticated && user?.role === 'admin' ? <AdminUpload /> : <Navigate to="/" />} />
-
-
-
     </Routes>
     </>
     
