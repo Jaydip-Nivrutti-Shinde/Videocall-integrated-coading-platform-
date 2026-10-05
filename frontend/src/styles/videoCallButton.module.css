@@ -1,0 +1,60 @@
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ff9839, #ff5e9c);
+    color: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 12px 40px rgba(255, 152, 57, 0.5), 0 0 0 8px rgba(255, 152, 57, 0.15);
+    z-index: 9998;
+    animation: vcPulse 2s infinite;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.fab:hover {
+    transform: scale(1.08);
+    box-shadow: 0 16px 50px rgba(255, 152, 57, 0.6), 0 0 0 12px rgba(255, 152, 57, 0.1);
+}
+
+.fab:active { transform: scale(0.96); }
+
+@keyframes vcPulse {
+    0% { box-shadow: 0 12px 40px rgba(255, 152, 57, 0.5), 0 0 0 0 rgba(255, 152, 57, 0.5); }
+    70% { box-shadow: 0 12px 40px rgba(255, 152, 57, 0.5), 0 0 0 20px rgba(255, 152, 57, 0); }
+    100% { box-shadow: 0 12px 40px rgba(255, 152, 57, 0.5), 0 0 0 0 rgba(255, 152, 57, 0); }
+}
+
+.menuOption {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    width: 100%;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 12px;
+    text-align: left;
+    font-family: inherit;
+    transition: all 0.2s ease;
+}
+.menuOption:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(255, 152, 57, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 152, 57, 0.15);
+}
+.menuIcon { display: flex; align-items: center; justify-content: center; width: 46px; height: 46px; border-radius: 12px; flex-shrink: 0; }
+.createIcon { background: linear-gradient(135deg, rgba(255, 152, 57, 0.25), rgba(255, 94, 156, 0.25)); color: #ff9839; }
+.joinIcon { background: linear-gradient(135deg, rgba(120, 80, 255, 0.25), rgba(80, 200, 255, 0.25)); color: #8a7fff; }
+.menuText h4 { font-size: 1rem; font-weight: 700; margin-bottom: 2px; }
+.menuText p { font-size: 0.78rem; color: rgba(255, 255, 255, 0.5); line-height: 1.3; }

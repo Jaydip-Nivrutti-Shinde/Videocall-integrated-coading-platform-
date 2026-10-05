@@ -1,0 +1,17 @@
+.window { position: fixed; border-radius: 14px; background: rgba(18, 15, 35, 0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); box-shadow: 0 24px 80px rgba(0, 0, 0, 0.75), 0 0 60px rgba(120, 80, 255, 0.1); display: flex; flex-direction: column; overflow: hidden; }
+.window:hover { box-shadow: 0 28px 90px rgba(0, 0, 0, 0.85), 0 0 80px rgba(120, 80, 255, 0.18); }
+.header { display: flex; align-items: center; justify-content: space-between; padding: 8px 10px 8px 14px; background: rgba(255, 255, 255, 0.04); border-bottom: 1px solid rgba(255, 255, 255, 0.06); cursor: grab; user-select: none; flex-shrink: 0; height: 44px; }
+.header:active { cursor: grabbing; }
+.title { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; font-weight: 600; color: rgba(255, 255, 255, 0.9); letter-spacing: 0.2px; }
+.actions { display: flex; align-items: center; gap: 2px; }
+.actions .MuiIconButton-root { color: rgba(255, 255, 255, 0.6); padding: 4px; }
+.actions .MuiIconButton-root:hover { color: white; background: rgba(255, 255, 255, 0.1); }
+.body { position: relative; flex: 1; overflow: hidden; display: flex; flex-direction: column; min-height: 0; }
+.resizeHandle { position: absolute; right: 0; bottom: 0; width: 18px; height: 18px; display: flex; align-items: center; justify-content: center; cursor: nwse-resize; z-index: 10; opacity: 0.6; }
+.resizeHandle:hover { opacity: 1; }
+.miniBtnWrapper { position: fixed; }
+.miniBadge { position: absolute; top: -6px; right: -6px; min-width: 22px; height: 22px; padding: 0 6px; border-radius: 11px; color: white; font-size: 0.72rem; font-weight: 800; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6), 0 0 0 2px rgba(18, 15, 35, 0.96); z-index: 2; }
+.miniBtn { position: relative; display: flex; align-items: center; gap: 8px; padding: 8px 14px 8px 8px; background: rgba(18, 15, 35, 0.96); backdrop-filter: blur(20px); border: 2px solid rgba(255, 255, 255, 0.15); border-radius: 50px; cursor: grab; user-select: none; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.75), 0 0 0 4px rgba(255, 152, 57, 0.08); max-width: 220px; }
+.miniBtn:hover { transform: scale(1.05); }
+.miniIcon { width: 34px; height: 34px; border-radius: 50%; background: rgba(255, 255, 255, 0.06); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.miniLabel { font-size: 0.78rem; font-weight: 700; color: rgba(255, 255, 255, 0.85); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; padding-right: 4px; }

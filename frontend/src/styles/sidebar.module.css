@@ -1,0 +1,13 @@
+.sidebar { position: fixed; width: 56px; padding: 10px 0; background: rgba(18, 15, 35, 0.96); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 18px; box-shadow: 0 20px 60px rgba(0, 0, 0, 0.75); display: flex; flex-direction: column; align-items: center; gap: 6px; z-index: 250; }
+.dragHandle { color: rgba(255, 255, 255, 0.35); padding: 2px 0 4px; cursor: grab; display: flex; align-items: center; justify-content: center; width: 100%; }
+.collapseBtn { color: rgba(255, 255, 255, 0.6) !important; background: rgba(255, 255, 255, 0.05) !important; width: 28px !important; height: 22px !important; border-radius: 8px !important; }
+.collapseBtn:hover { background: rgba(255, 255, 255, 0.15) !important; }
+.iconBtn { color: rgba(255, 255, 255, 0.85) !important; background: rgba(255, 255, 255, 0.05) !important; width: 40px !important; height: 40px !important; }
+.iconBtn:hover { background: rgba(255, 255, 255, 0.15) !important; }
+.iconBtn.off { background: rgba(255, 87, 87, 0.22) !important; color: #ff5757 !important; }
+.iconBtn.active { background: linear-gradient(135deg, #ff9839, #ff5e9c) !important; color: white !important; box-shadow: 0 4px 14px rgba(255, 152, 57, 0.4); }
+.spacer { flex: 1; min-height: 12px; }
+.endBtn { background: #e53935 !important; color: white !important; width: 40px !important; height: 40px !important; }
+.endBtn:hover { background: #ff5252 !important; }
+.collapsedPill { position: fixed; z-index: 250; background: rgba(18, 15, 35, 0.96); backdrop-filter: blur(20px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; box-shadow: 0 12px 40px rgba(0, 0, 0, 0.7), 0 0 0 4px rgba(255, 152, 57, 0.15); cursor: grab; }
+.collapsedBtn { color: #ff9839 !important; padding: 6px !important; }

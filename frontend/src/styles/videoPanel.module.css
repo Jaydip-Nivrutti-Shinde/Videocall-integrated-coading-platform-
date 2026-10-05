@@ -1,0 +1,20 @@
+.container { width: 100%; height: 100%; background: #050510; overflow: hidden; }
+.grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 8px; padding: 8px; height: 100%; overflow-y: auto; align-content: center; }
+.tile { position: relative; background: #000; border-radius: 10px; overflow: hidden; cursor: pointer; aspect-ratio: 16/9; border: 1px solid rgba(255, 255, 255, 0.08); min-height: 120px; }
+.tile:hover { border-color: rgba(255, 152, 57, 0.5); }
+.tile video { width: 100%; height: 100%; object-fit: cover; background: black; }
+.tileLabel { position: absolute; bottom: 6px; left: 6px; padding: 2px 8px; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(8px); color: white; font-size: 0.68rem; font-weight: 600; border-radius: 20px; z-index: 2; }
+.camOff { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: rgba(20, 16, 43, 0.9); color: rgba(255, 255, 255, 0.4); z-index: 1; }
+.empty { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 12px; color: rgba(255, 255, 255, 0.5); }
+.pulse { width: 60px; height: 60px; border-radius: 50%; background: radial-gradient(circle, rgba(255, 152, 57, 0.4), transparent 70%); animation: pulseAnim 2s ease-in-out infinite; }
+@keyframes pulseAnim { 0%, 100% { transform: scale(1); opacity: 0.6; } 50% { transform: scale(1.4); opacity: 0.2; } }
+.spotlightWrap { display: flex; flex-direction: column; height: 100%; padding: 8px; gap: 8px; }
+.spotlightMain { position: relative; flex: 1; background: #000; border-radius: 12px; overflow: hidden; cursor: pointer; border: 1px solid rgba(255, 152, 57, 0.3); }
+.spotlightMain video { width: 100%; height: 100%; object-fit: contain; background: black; }
+.spotlightLabel { position: absolute; top: 10px; left: 10px; padding: 4px 10px; background: rgba(0, 0, 0, 0.75); backdrop-filter: blur(8px); color: #ff9839; font-size: 0.72rem; font-weight: 700; border-radius: 20px; display: flex; align-items: center; gap: 4px; }
+.backBtn { position: absolute; top: 10px; right: 10px; padding: 6px; background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 8px; color: white; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+.strip { display: flex; gap: 6px; overflow-x: auto; padding: 2px 0; flex-shrink: 0; }
+.thumb { position: relative; flex-shrink: 0; width: 100px; height: 62px; background: #000; border-radius: 8px; overflow: hidden; cursor: pointer; border: 1px solid rgba(255, 255, 255, 0.1); }
+.thumb:hover { border-color: rgba(255, 152, 57, 0.6); }
+.thumb video { width: 100%; height: 100%; object-fit: cover; }
+.thumb .tileLabel { font-size: 0.6rem; padding: 1px 6px; bottom: 4px; left: 4px; }
